@@ -1,76 +1,45 @@
-# Wishlist Management API
-
-This project is a Spring Boot application for managing wishlists.
-
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Features](#features)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Usage](#usage)
-- [API Endpoints](#api-endpoints)
-- [Contributing](#contributing)
-- [License](#license)
+ # Wishlist Management Backend
 
 ## Introduction
 
-The Wishlist Management API is designed to help users manage their wishlists. It provides endpoints for adding, retrieving, and deleting wishlist items.
+Welcome to the Wishlist Management Backend for our e-commerce platform. This backend is responsible for handling user authentication, wishlist management, and database integration.
 
-## Features
+## Requirements
 
-- User registration
-- Add wishlist items
-- Retrieve wishlist items
-- Delete wishlist items
+### User Authentication
 
+- Implement user authentication using Spring Security.
+- Allow users to sign up and log in securely.
+
+### Wishlist Management
+
+- Design and implement RESTful API endpoints for wishlist management:
+  - `/api/wishlists`: GET endpoint to retrieve a user's wishlist.
+  - `/api/wishlists`: POST endpoint to create a new wishlist item.
+  - `/api/wishlists/{id}`: DELETE endpoint to remove a wishlist item by ID.
+- Ensure that only authenticated users can access and manage their wishlists.
+
+### Database Integration
+
+- Integrate the application with a relational database using Spring Data JPA.
+- Design the database schema to store user information and wishlist items.
+- Implement repository interfaces for CRUD operations on wishlist entities.
+ 
+ 
 ## Getting Started
+
+To get started with the Wishlist Management Backend, follow the instructions below.
 
 ### Prerequisites
 
-- [Java Development Kit (JDK)](https://adoptopenjdk.net/)
-- [Apache Maven](https://maven.apache.org/download.cgi)
+- Java Development Kit (JDK)
+- Integrated Development Environment (IDE) of your choice
+- ...
 
 ### Installation
 
 1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/wishlist-management-backend.git
+   cd wishlist-management-backend
 
-    ```bash
-    git clone https://github.com/yourusername/wishlist-management.git
-    ```
-
-2. Navigate to the project directory:
-
-    ```bash
-    cd wishlist-management
-    ```
-
-3. Build the project:
-
-    ```bash
-    mvn clean install
-    ```
-
-4. Run the application:
-
-    ```bash
-    mvn spring-boot:run
-    ```
-
-The application will start, and you can access the API at `http://localhost:8080`.
-
-## Usage
-
-- Register a user using the `/api/users/register` endpoint.
-- Manage wishlist items using the `/api/wishlists` endpoints.
-
-## API Endpoints
-
-- **POST /api/users/register**: Register a new user.
-
-  ```json
-  {
-    "username": "exampleUser",
-    "password": "examplePassword"
-  }
